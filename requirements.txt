@@ -1,0 +1,9 @@
+torch
+facenet-pytorch
+scikit-learn
+flask
+pillow
+numpy
+joblib
+gunicorn
+python-dotenv
