@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>me-verifier · Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Verificador de identidad</h1>
+      <p class="muted">Umbral actual: <b id="threshold">{{ '%.2f' % threshold }}</b></p>
+    </header>
+
+    <section class="card">
+      <div class="uploader">
+        <label for="file">Selecciona una imagen (JPG/PNG):</label>
+        <input id="file" type="file" accept="image/jpeg,image/png" />
+      </div>
+
+      <div id="previewWrap" class="preview hidden">
+        <img id="preview" alt="Vista previa" />
+      </div>
+
+      <div class="actions">
+        <button id="btnVerify" disabled>Verificar</button>
+        <span id="spinner" class="spinner hidden"></span>
+      </div>
+
+      <div id="result" class="result hidden"></div>
+      <div id="error" class="error hidden"></div>
+    </section>
+
+    <footer>
+      <p class="muted">Sube una foto, procesamos 1 rostro y mostramos <code>is_me</code>, <code>score</code> y latencia.</p>
+    </footer>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
