@@ -63,11 +63,8 @@ function showResult(data) {
   const { is_me, score, threshold, timing_ms } = data;
   resultBox.innerHTML = `
     <div class="badge ${is_me ? "yes" : "no"}">
-      ${is_me ? "ES FERNANDO" : "NO ES FERNANDO"}
-    </div>
-    <div class="kv">score: <b>${Number(score).toFixed(4)}</b></div>
-    <div class="kv">threshold: <b>${Number(threshold).toFixed(2)}</b></div>
-    <div class="kv">latencia: <b>${timing_ms} ms</b></div>
+    ${is_me ? "ES FERNANDO" : "NO ES FERNANDO"}
+  </div>
   `;
   resultBox.classList.remove("hidden");
 }
